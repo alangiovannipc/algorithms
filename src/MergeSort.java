@@ -4,7 +4,7 @@
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] myarray = {45,21,16,2,34,15};
+        int[] myarray = {12,67,45,21,16,2,34,15};
         merge_sort(myarray,0, myarray.length-1);
 
         for(int num:myarray){
@@ -13,7 +13,7 @@ public class MergeSort {
     }
 
     public static void merge_sort(int[] arr, int p, int r) {
-        if (p<r){
+        if (p<r) {
             int q = (p+r) / 2;
             merge_sort(arr,p,q);
             merge_sort(arr,q+1,r);
@@ -32,11 +32,11 @@ public class MergeSort {
 
         //Fill the two arrays
         for(i=0;i<n1;i++){
-            left_arr[i] = arr[p+i-1];
+            left_arr[i] = arr[p+i];
         }
 
         for(j=0;j<n2;j++){
-            right_arr[j] = arr[q+j];
+            right_arr[j] = arr[q+j+1];
         }
 
         //We put an extra value called sentinel
@@ -46,7 +46,7 @@ public class MergeSort {
         i = 0;
         j = 0;
 
-        for(k = p;k<r;k++){
+        for(k = p;k<=r;k++){
             if (left_arr[i] <= right_arr[j]) {
                 arr[k] = left_arr[i];
                 i++;
